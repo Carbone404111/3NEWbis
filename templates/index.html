@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcul d'Orbite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Calculateur de satellite</h1>
+        <form method="POST">
+            <label for="distance">Distance du satellite (en km) :</label>
+            <input type="number" name="distance" required min="0" placeholder="Ex: 500">
+            <button type="submit">Calculer</button>
+        </form>
+
+        {% if result1 %}
+            <div class="result">
+                <p>{{ result1 }}</p>
+                <p>{{ result2 }}</p>
+            </div>
+        {% endif %}
+
+        {% if image %}
+            <div class="image-container">
+                <img src="{{ url_for('static', filename=image) }}" alt="Graphique de l'orbite">
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
