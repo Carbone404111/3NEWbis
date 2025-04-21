@@ -46,7 +46,7 @@ def index():
             minute = int(temps_restant // 60)
             seconde = int(temps_restant % 60)
 
-            vitesse_liberation = squrt(2*G*M/r)
+            vitesse_liberation = sqrt(2*G*M/r)
 
             result1 = f"🚀 Vitesse orbitale : {vitesse_orbitale:.2f} km/h"
             result2 = f"⏱️ Période orbitale : {an} an(s), {jour} jour(s), {heure}h {minute}min {seconde}s"
