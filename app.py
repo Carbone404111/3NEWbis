@@ -14,6 +14,7 @@ R = 6.371 * 10**6  # rayon en mètres
 def index():
     result1 = ""
     result2 = ""
+    result3 = ""
     image = None
 
     if request.method == 'POST':
