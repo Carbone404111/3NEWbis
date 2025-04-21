@@ -81,7 +81,7 @@ def index():
         except Exception as e:
             result1 = f"Erreur : {str(e)}"
 
-    return render_template('index.html', result1=result1, result2=result2, image=image)
+    return render_template('index.html', result1=result1, result2=result2, result3=result3, image=image)
 
 import os
 
