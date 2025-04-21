@@ -21,7 +21,7 @@ def index():
             h_km = float(request.form['distance'])
 
             if h_km >= 326000 or h_km == 326000:
-                result1 = "⚠️ Ce satellite est trop loin de la terre, il a dépassé le point L1, et l'influence de la terre est négligeable."
+                result1 = "⚠️ Ce satellite est trop loin de la terre, il a dépassé le point Lagrange, et l'influence de la terre est négligeable."
                 result2 = "Fais une recherche pour en savoir plus !"
                 return render_template('index.html', result1=result1, result2=result2)
             if h_km <= 160 or h_km == 160:
