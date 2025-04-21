@@ -23,11 +23,13 @@ def index():
             if h_km >= 326000 or h_km == 326000:
                 result1 = "⚠️ Ce satellite est trop loin de la terre, il a dépassé le point Lagrange, et l'influence de la terre est négligeable."
                 result2 = "Fais une recherche pour en savoir plus !"
-                return render_template('index.html', result1=result1, result2=result2)
+                result3 = "Essaye une autre valeure..."
+                return render_template('index.html', result1=result1, result2=result2, result3 = result3)
             if h_km <= 160 or h_km == 160:
                 result1 = "⚠️ Ce satellite est trop proche de la terre, il peut exister brièvement, mais ce n’est pas une orbite stable.."
                 result2 = "Fais une recherche pour en savoir plus !"
-                return render_template('index.html', result1=result1, result2=result2)
+                result3 = "Essaye une autre valeure..."
+                return render_template('index.html', result1=result1, result2=result2, result3=result3)
 
             r = R + (h_km * 1000)  # convertir h en mètres
 
@@ -44,8 +46,11 @@ def index():
             minute = int(temps_restant // 60)
             seconde = int(temps_restant % 60)
 
+            vitesse_liberation = squrt(2*G*M/r)
+
             result1 = f"🚀 Vitesse orbitale : {vitesse_orbitale:.2f} km/h"
             result2 = f"⏱️ Période orbitale : {an} an(s), {jour} jour(s), {heure}h {minute}min {seconde}s"
+            result3 = f" Vitesse de libération : {vitesse_liberation} km/h"
 
             # Générer l’image
             R_terre = 6371
