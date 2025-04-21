@@ -50,7 +50,7 @@ def index():
 
             result1 = f"🚀 Vitesse orbitale : {vitesse_orbitale:.2f} km/h"
             result2 = f"⏱️ Période orbitale : {an} an(s), {jour} jour(s), {heure}h {minute}min {seconde}s"
-            result3 = f" Vitesse de libération : {vitesse_liberation} km/h"
+            result3 = f" Vitesse de libération : {vitesse_liberation:.2f} km/h"
 
             # Générer l’image
             R_terre = 6371
